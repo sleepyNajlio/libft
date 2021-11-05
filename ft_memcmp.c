@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 17:29:04 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/05 18:44:54 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/05 20:58:43 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/05 21:29:59 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, char *src, size_t size)
+int	ft_memcmp(void *s1, void *s2, size_t n)
 {
-	size_t	len;
-	size_t	i;
+	size_t				i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
 	i = 0;
-	len = ft_strlen(src);
-	if (size == 0)
-		return (len);
-	while (i < len && i < size - 1)
+	str1 = (unsigned char *) s1;
+	str2 = (unsigned char *) s2;
+	while (i < n && str1[i] == str2[i])
 	{
-		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (len);
+	return (str1[i] - str2[i]);
 }
 
 int main()
 {
-	char *str = strdup("najlio\0\0\0\0\0\0\0\0");
-	int i = ft_strlcpy(str, "helloooo", 6);
-	printf("%s %d", str, i);
+	char *s1 = strdup("");
+	char *s2 = strdup("heyyy");
+	int i = memcmp(s1, s2, 6);
+	printf("%d", i);
 }

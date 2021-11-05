@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 17:29:04 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/05 18:44:54 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/05 20:29:29 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/05 20:52:55 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, char *src, size_t size)
+char	*ft_strnstr(char *str, char *tofind, size_t len)
 {
-	size_t	len;
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	len = ft_strlen(src);
-	if (size == 0)
-		return (len);
-	while (i < len && i < size - 1)
+	j = 0;
+	if (tofind[i] == '\0')
+		return (str);
+	while (str[i] && tofind[j] && i < len)
 	{
-		dst[i] = src[i];
+		if (str[i] == tofind[j])
+			j++;
+		else
+			j = 0;
 		i++;
 	}
-	dst[i] = '\0';
-	return (len);
+	if (j == ft_strlen(tofind))
+		return (&str[i - j]);
+	else
+		return (0);
 }
 
 int main()
 {
-	char *str = strdup("najlio\0\0\0\0\0\0\0\0");
-	int i = ft_strlcpy(str, "helloooo", 6);
-	printf("%s %d", str, i);
+	printf("%s", ft_strnstr("najlio hey", "zbi", 11));
 }

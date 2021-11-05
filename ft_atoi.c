@@ -1,38 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 17:29:04 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/05 18:44:54 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/05 19:58:18 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/05 20:18:13 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, char *src, size_t size)
+int	ft_atoi(char *str)
 {
-	size_t	len;
-	size_t	i;
+	int	i;
+	int	p;
+	int	res;
 
 	i = 0;
-	len = ft_strlen(src);
-	if (size == 0)
-		return (len);
-	while (i < len && i < size - 1)
+	p = 1;
+	res = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
 	{
-		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (len);
+	if (str[i] == '-')
+	{
+		p = -1;
+		i++;
+	}
+	else if (str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + (str[i] - 48);
+		i++;
+	}
+	return (res * p);
 }
 
 int main()
 {
-	char *str = strdup("najlio\0\0\0\0\0\0\0\0");
-	int i = ft_strlcpy(str, "helloooo", 6);
-	printf("%s %d", str, i);
+	printf("%d", ft_atoi("-12s3"));
 }

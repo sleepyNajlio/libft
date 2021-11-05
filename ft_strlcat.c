@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 17:29:04 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/05 18:44:54 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/05 18:35:29 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/05 19:23:14 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, char *src, size_t size)
+size_t	ft_strlcat( char *dst, char *src, size_t size)
 {
-	size_t	len;
+	size_t	lend;
+	size_t	lens;
 	size_t	i;
 
 	i = 0;
-	len = ft_strlen(src);
+	lend = ft_strlen(dst);
+	lens = ft_strlen(src);
 	if (size == 0)
-		return (len);
-	while (i < len && i < size - 1)
+		return (lens);
+	while (src[i] && (i + lend) < size - 1)
 	{
-		dst[i] = src[i];
+		dst[lend + i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (len);
+	dst[lend + i] = '\0';
+	return (lend + lens);
 }
 
 int main()
 {
-	char *str = strdup("najlio\0\0\0\0\0\0\0\0");
-	int i = ft_strlcpy(str, "helloooo", 6);
+	char *str;
+	int i;
+	str = malloc(sizeof(char) * 20);
+	strcpy(str, "najlio");
+	i = ft_strlcat(str, "", 20);
 	printf("%s %d", str, i);
-}
+} 
