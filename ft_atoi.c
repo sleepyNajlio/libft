@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:58:18 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/05 20:18:13 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/06 16:11:07 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,3 @@ int	ft_atoi(char *str)
 	return (res * p);
 }
 
-int main()
-{
-	printf("%d", ft_atoi("-12s3"));
-}

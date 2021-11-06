@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 19:21:40 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/06 16:33:11 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/06 18:28:32 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/06 18:45:57 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_substr(char *s, unsigned int start, size_t len)
 {
 	size_t	i;
+	size_t	j;
+	char	*str;
 
 	i = 0;
-	while (i < len)
+	j = 0;
+	while (s[i])
 	{
-		*(unsigned char *)b = (unsigned char)c;
-		b++;
-		i++;
+		if ((unsigned char)s[i] != start)
+			i++;
+		else
+			break ;
 	}
-	return (b);
+	str = malloc(sizeof(char) * len);
+	if (!str)
+		return (0);
+	while (s[i] && j < len)
+		str[j++] = s[i++];
+	return (str);
 }
 
-// int main()
-// {
-// 	char s[50] = "hello";
-	
-// 	ft_memset(s + 1, 's',  3 * sizeof(char));
-// 	printf("%s", s);
-// }
+int main()
+{
+	printf("%s", ft_substr("hello", 'e', 3));
+}

@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 19:21:40 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/06 16:33:11 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/06 18:47:48 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/06 19:05:59 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	size_t	i;
+	int		len;
+	char	*res;
 
-	i = 0;
-	while (i < len)
-	{
-		*(unsigned char *)b = (unsigned char)c;
-		b++;
-		i++;
-	}
-	return (b);
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	res = malloc(sizeof(char) * len);
+	if (!res)
+		return (0);
+	ft_strlcat(res, s1, len);
+	ft_strlcat(res, s2, len);
+	return (res);
 }
 
-// int main()
-// {
-// 	char s[50] = "hello";
-	
-// 	ft_memset(s + 1, 's',  3 * sizeof(char));
-// 	printf("%s", s);
-// }
+int main()
+{
+	printf("%s", ft_strjoin(" ", "lootfi"));
+}

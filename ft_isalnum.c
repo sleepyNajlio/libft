@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 16:26:53 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/05 16:39:50 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/06 16:11:19 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,3 @@ int	ft_isalnum(int c)
 	return (0);
 }
 
-int main()
-{
-	printf("%d", ft_isalnum(123));
-}

@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 19:21:40 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/06 16:33:11 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/06 15:59:33 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/06 16:10:56 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strdup(char *str)
 {
-	size_t	i;
+	int		len;
+	int		i;
+	char	*s;
 
 	i = 0;
-	while (i < len)
-	{
-		*(unsigned char *)b = (unsigned char)c;
-		b++;
-		i++;
-	}
-	return (b);
+	len = ft_strlen(str);
+	s = malloc(sizeof(char) * len);
+	if (!s)
+		return (0);
+	ft_strlcpy(s, str, len + 1);
+	return (s);
 }
 
-// int main()
-// {
-// 	char s[50] = "hello";
-	
-// 	ft_memset(s + 1, 's',  3 * sizeof(char));
-// 	printf("%s", s);
-// }
+int main()
+{
+	char *str = strdup("    gg");
+	printf("%s", str);
+}

@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 19:21:40 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/06 16:33:11 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/06 14:40:28 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/06 16:21:39 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memchr(void *s, int c, size_t n)
 {
-	size_t	i;
+	unsigned char	*str;
+	size_t			i;
 
 	i = 0;
-	while (i < len)
+	str = (unsigned char *) s;
+	while (i < n)
 	{
-		*(unsigned char *)b = (unsigned char)c;
-		b++;
+		if (str[i] == c)
+			return (&str[i]);
 		i++;
 	}
-	return (b);
+	return (0);
 }
-
-// int main()
-// {
-// 	char s[50] = "hello";
-	
-// 	ft_memset(s + 1, 's',  3 * sizeof(char));
-// 	printf("%s", s);
-// }

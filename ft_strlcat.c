@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 18:35:29 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/05 19:23:14 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/06 19:03:31 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ size_t	ft_strlcat( char *dst, char *src, size_t size)
 	return (lend + lens);
 }
 
-int main()
-{
-	char *str;
-	int i;
-	str = malloc(sizeof(char) * 20);
-	strcpy(str, "najlio");
-	i = ft_strlcat(str, "", 20);
-	printf("%s %d", str, i);
-} 
+// int main()
+// {
+// 	char *str;
+// 	int i;
+// 	str = malloc(sizeof(char) * 20);
+// 	strcpy(str, "najlio");
+// 	i = ft_strlcat(str, "", 20);
+// 	printf("%s %d", str, i);
+// } 
