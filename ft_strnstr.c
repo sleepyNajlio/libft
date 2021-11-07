@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 20:29:29 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/05 20:52:55 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/06 20:25:41 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,4 @@ char	*ft_strnstr(char *str, char *tofind, size_t len)
 		return (&str[i - j]);
 	else
 		return (0);
-}
-
-int main()
-{
-	printf("%s", ft_strnstr("najlio hey", "zbi", 11));
 }
