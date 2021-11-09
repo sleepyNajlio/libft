@@ -1,42 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 18:28:32 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/07 18:55:13 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/09 20:10:45 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/09 21:01:38 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char *s, unsigned int start, size_t len)
+int	charnum(int n)
 {
-	size_t	i;
-	size_t	j;
-	char	*str;
+	int	i;
 
 	i = 0;
-	j = 0;
-	while (s[i])
+	while (n / 10 > 0)
 	{
-		if ((unsigned char)s[i] != start)
-			i++;
-		else
-			break ;
+		i++;
+		n = n / 10;
 	}
-	str = malloc(sizeof(char) * len + 1);
+	i++;
+	return (i);
+}
+
+char *itoa(int n)
+{
+	int		i;
+	char	*str;
+	int		t;
+
+	i = 0;
+	t = n;
+	if (n < 0)
+	{
+		n = -n;
+		i++;
+	}
+	i += charnum(n) ;
+	//printf("%d", i);
+	str = malloc(sizeof(char) * i + 1);
 	if (!str)
 		return (0);
-	while (s[i] && j < len)
-		str[j++] = s[i++];
-	str[j] = '\0';
+	str[i--] = '\0';
+	while (i >= 0)
+	{
+		if (t < 0 && i == 0)
+			str[i] = '-';
+		else
+			str[i] = (n % 10) + 48;
+		n = n / 10;
+		i--;
+	}
 	return (str);
 }
 
 int main()
 {
-	printf("%s", ft_substr("hello", 'e', 4));
+	printf("%s", itoa(-2345656));
 }
