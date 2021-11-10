@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 15:59:33 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/10 18:53:33 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/10 18:15:28 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/10 19:29:48 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *str)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		len;
-	int		i;
-	char	*s;
+	unsigned int		i;
+	int					len;
+	char				*res;
 
 	i = 0;
-	len = strlen(str) + 1;
-	printf("%d", len);
-	s = malloc(sizeof(char) * len);
 	if (!s)
 		return (0);
-	ft_strlcpy(s, str, len);
-	return (s);
-}
-
-int main()
-{
-	char *str = ft_strdup("najlio");
-	printf("%s", str);
+	len = ft_strlen(s);
+	res = malloc(sizeof(char) * len + 1);
+	if (!res)
+		return (0);
+	while (s[i])
+	{
+		res[i] = (*f)(i, res[i]);
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }

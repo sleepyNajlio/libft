@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/06 15:59:33 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/10 18:53:33 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/10 19:24:02 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/10 19:29:30 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int		len;
-	int		i;
-	char	*s;
+	unsigned int	i;
 
 	i = 0;
-	len = strlen(str) + 1;
-	printf("%d", len);
-	s = malloc(sizeof(char) * len);
 	if (!s)
 		return (0);
-	ft_strlcpy(s, str, len);
-	return (s);
-}
-
-int main()
-{
-	char *str = ft_strdup("najlio");
-	printf("%s", str);
+	while (s[i])
+	{
+		(*f)(i, &s[i]);
+		i++;
+	}
 }
