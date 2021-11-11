@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 20:02:16 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/08 18:21:35 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/11 02:23:47 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	last_set(char *s, char *set)
 
 	lens = ft_strlen(s);
 	lenset = ft_strlen(set);
-	while (strchr(set, s[lens - 1]))
+	while (ft_strchr(set, s[lens - 1]))
 	{
 		lens--;
 	}
@@ -55,10 +55,4 @@ char	*ft_strtrim(char *s, char *set)
 		return (0);
 	ft_strlcpy(res, &s[first], len);
 	return (res);
-}
-
-
-int main()
-{
-	printf("%s", ft_strtrim("heyheyjdsfhsjfyeh", "hey"));
 }

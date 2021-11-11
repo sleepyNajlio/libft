@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 16:26:53 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/11 02:24:20 by nloutfi          ###   ########.fr       */
+/*   Created: 2021/11/10 23:23:27 by nloutfi           #+#    #+#             */
+/*   Updated: 2021/11/10 23:27:26 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	if (c >= 'a' && c >= 'z')
-		return (1);
-	return (0);
+	write(fd, &c, 1);
 }

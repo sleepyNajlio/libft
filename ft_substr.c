@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:28:32 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/07 18:55:13 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/11 02:36:53 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,4 @@ char	*ft_substr(char *s, unsigned int start, size_t len)
 		str[j++] = s[i++];
 	str[j] = '\0';
 	return (str);
-}
-
-int main()
-{
-	printf("%s", ft_substr("hello", 'e', 4));
 }

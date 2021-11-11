@@ -6,13 +6,13 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 19:58:18 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/06 16:11:07 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/11 04:12:08 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	p;
@@ -40,4 +40,3 @@ int	ft_atoi(char *str)
 	}
 	return (res * p);
 }
-

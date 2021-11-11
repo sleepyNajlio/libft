@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:10:45 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/09 21:01:38 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/11 02:24:59 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	charnum(int n)
 	return (i);
 }
 
-char *itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		i;
 	char	*str;
@@ -39,8 +39,7 @@ char *itoa(int n)
 		n = -n;
 		i++;
 	}
-	i += charnum(n) ;
-	//printf("%d", i);
+	i += charnum(n);
 	str = malloc(sizeof(char) * i + 1);
 	if (!str)
 		return (0);
@@ -50,14 +49,8 @@ char *itoa(int n)
 		if (t < 0 && i == 0)
 			str[i] = '-';
 		else
-			str[i] = (n % 10) + 48;
+			str[i--] = (n % 10) + 48;
 		n = n / 10;
-		i--;
 	}
 	return (str);
-}
-
-int main()
-{
-	printf("%s", itoa(-2345656));
 }

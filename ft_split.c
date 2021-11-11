@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:59:01 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/09 20:09:31 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/11 02:36:34 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,22 +63,21 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	char	**res;
-	int		n;
 	int		j;
 
-	n = word_count((char *)s, c);
 	i = 0;
 	j = 0;
-	res = malloc(sizeof(char *) * n + 1);
+	res = malloc(sizeof(char *) * word_count((char *)s, c) + 1);
 	if (!res)
 		return (NULL);
-	while (i < n)
+	while (i < word_count((char *)s, c))
 	{
 		if ((j == 0 || s[j - 1] == c) && s[j] != c)
 		{
-			if (!(res[i] = word_maker((char *)s, c, j)))
+			res[i] = word_maker((char *)s, c, j);
+			if (!(res))
 			{
-				ft_free(res[i - 1]);
+				ft_free(&res[i - 1], i);
 			}
 			i++;
 		}
@@ -86,18 +85,4 @@ char	**ft_split(char const *s, char c)
 	}
 	res[i] = 0;
 	return (res);
-}
-
-int main()
-{
-	char *str = strdup("...he.llo....yo.u.are.dumb.....");
-	char c = '.';
-	char **res = ft_split(str, c);
-	int i = 0;
-	
-	while (i < 10)
-	{
-		printf("%s \n", res[i]);
-		i++;
-	}
 }

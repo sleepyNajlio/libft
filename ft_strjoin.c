@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:47:48 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/06 19:05:59 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/11 00:32:59 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,4 @@ char	*ft_strjoin(char *s1, char *s2)
 	ft_strlcat(res, s1, len);
 	ft_strlcat(res, s2, len);
 	return (res);
-}
-
-int main()
-{
-	printf("%s", ft_strjoin(" ", "lootfi"));
 }
