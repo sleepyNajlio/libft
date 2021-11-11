@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 20:58:43 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/11 04:37:25 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/11 17:11:27 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,11 @@ int	ft_memcmp(void *s1, void *s2, size_t n)
 	str2 = (unsigned char *) s2;
 	if (n == 0)
 		return (0);
-	while (i < n && str1[i] == str2[i])
+	while (str1[i] == str2[i] && i < n)
 	{
 		i++;
 	}
-	return (str1[i - 1] - str2[i - 1]);
-}
-
-int main()
-{
-	char *s = 
+	if (i != n)
+		return (str1[i] - str2[i]);
+	return (0);
 }
