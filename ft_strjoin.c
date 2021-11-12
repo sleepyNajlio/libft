@@ -6,13 +6,13 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:47:48 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/11 00:32:59 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/12 06:41:31 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	int		len;
 	char	*res;

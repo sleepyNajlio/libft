@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 21:06:36 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/11 19:26:18 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/12 00:56:07 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ void	*ft_memmove(void *dst, void *src, size_t len)
 	size_t	i;
 
 	i = 0;
-	//printf("%p %p\n", dst, src);
 	if (dst > src)
 	{
-		//printf("memmove\n");
 		while (len > 0)
 		{
 			((char *)dst)[len - 1] = ((char *)src)[len - 1];
@@ -29,15 +27,7 @@ void	*ft_memmove(void *dst, void *src, size_t len)
 		return (dst);
 	}
 	else
-	{
-		//printf("memcpy\n");
-		while (i < len && (dst || src))
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i++;
-		}
-	}
-	return (dst);
+		return (ft_memcpy(dst, src, len));
 }
 
 // int main()

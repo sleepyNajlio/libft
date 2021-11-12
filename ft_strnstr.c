@@ -6,13 +6,13 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 20:29:29 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/06 20:25:41 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/12 02:54:43 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(char *str, char *tofind, size_t len)
+char	*ft_strnstr(const char *str, const char *tofind, size_t len)
 {
 	size_t	i;
 	size_t	j;
@@ -20,17 +20,25 @@ char	*ft_strnstr(char *str, char *tofind, size_t len)
 	i = 0;
 	j = 0;
 	if (tofind[i] == '\0')
-		return (str);
-	while (str[i] && tofind[j] && i < len)
+		return ((char *)&str[i]);
+	while (str[i] && tofind[j] && (size_t) i < len)
 	{
-		if (str[i] == tofind[j])
+		j = 0;
+		while (str[i + j] == tofind[j] && i + j < len)
+		{
 			j++;
-		else
-			j = 0;
+			if (tofind[j] == '\0')
+				return ((char *)&str[i]);
+		}
 		i++;
 	}
-	if (j == ft_strlen(tofind))
-		return (&str[i - j]);
-	else
-		return (0);
+	return (0);
 }
+
+
+// int main()
+// {
+// 	char haystack[30] = "aaabcabcd";
+// 	char needle[10] = "aabc";
+// 	printf("%d", ft_strnstr(haystack, needle, -1) == haystack + 1);
+// }

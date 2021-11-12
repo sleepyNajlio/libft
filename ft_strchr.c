@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:20:36 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/07 15:17:05 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/12 01:21:40 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char )c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == (char )c)
 		return ((char *)&s[i]);
 	return (0);
 }

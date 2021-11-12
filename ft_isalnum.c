@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 16:26:53 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/11 02:24:20 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/12 01:14:19 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_isalnum(int c)
 		return (1);
 	if (c >= 'A' && c <= 'Z')
 		return (1);
-	if (c >= 'a' && c >= 'z')
+	if (c >= 'a' && c <= 'z')
 		return (1);
 	return (0);
 }

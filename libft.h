@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 20:50:31 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/11 19:19:23 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/12 06:41:46 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,16 @@ char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(char *str);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin(const char *s1, const char *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-char	*ft_strnstr(char *str, char *tofind, size_t len);
+char	*ft_strnstr(const char *str, const char *tofind, size_t len);
 char	*ft_strrchr(const char *s, int c);
-char	*ft_strtrim(char *s, char *set);
-char	*ft_substr(char *s, unsigned int start, size_t len);
+char	*ft_strtrim(const char *s, const char *set);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
