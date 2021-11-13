@@ -6,13 +6,13 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:10:45 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/12 18:47:06 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/13 23:46:31 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	charnum(int n)
+int	charnum(long int n)
 {
 	int	i;
 
@@ -28,35 +28,34 @@ int	charnum(int n)
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	char	*str;
-	int		t;
+	int			i;
+	char		*str;
+	long int	nbr;
 
 	i = 0;
-	t = n;
-	if (n < 0)
+	nbr = (long int)(n);
+	if (nbr < 0)
 	{
-		n = -n;
+		nbr = -nbr;
 		i++;
 	}
-	i += charnum(n);
+	i += charnum(nbr);
 	str = malloc(sizeof(char) * i + 1);
 	if (!str)
 		return (0);
 	str[i--] = '\0';
 	while (i >= 0)
 	{
-		if (t < 0 && i == 0)
-			str[i] = '-';
-		else
-			str[i--] = (n % 10) + 48;
-		n = n / 10;
+		str[i--] = (nbr % 10) + 48;
+		nbr = nbr / 10;
 	}
+	if (n < 0)
+		str[0] = '-';
 	return (str);
 }
-#include <limits.h>
+// #include <limits.h>
 
-int main()
-{
-	printf("%s", ft_itoa(INT_MIN));
-}
+// int main()
+// {
+// 	printf("%s", ft_itoa(INT_MIN));
+// }
