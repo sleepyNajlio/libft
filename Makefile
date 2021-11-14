@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/09 19:15:36 by nloutfi           #+#    #+#              #
-#    Updated: 2021/11/11 16:44:58 by nloutfi          ###   ########.fr        #
+#    Updated: 2021/11/14 05:45:17 by nloutfi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = ft_atoi.c ft_memcpy.c ft_strlcat.c ft_bzero.c \
 	  ft_strrchr.c ft_isprint.c ft_putendl_fd.c ft_strtrim.c \
 	  ft_itoa.c ft_putnbr_fd.c ft_substr.c ft_strjoin.c \
 	  ft_putstr_fd.c ft_tolower.c ft_split.c ft_toupper.c \
-	  ft_strchr.c ft_strdup.c
+	  ft_strchr.c ft_strdup.c ft_striteri.c
 
 # SRC_B = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 # 		ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \

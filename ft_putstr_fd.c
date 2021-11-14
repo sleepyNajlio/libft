@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 23:33:52 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/10 23:36:33 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/14 05:38:01 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_putstr_fd(char *s, int fd)
 	i = 0;
 	while (s[i])
 	{
-		write(fd, &s[i], 1);
+		ft_putchar_fd(s[i++], fd);
 	}
 }
