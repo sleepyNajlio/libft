@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:47:48 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/12 18:41:17 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/15 07:12:22 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	int		len;
 	char	*res;
 
+	if (!s1 || !s2)
+		return (0);
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	res = malloc(sizeof(char) * len);
 	if (!res)

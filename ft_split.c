@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:59:01 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/12 06:43:31 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/15 07:14:22 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	// printf("|%d|\n", word_count((char *)s, c));
+	if (!s)
+		return (0);
 	res = malloc(sizeof(char *) * word_count((char *)s, c) + 1);
 	if (!res)
 		return (NULL);
@@ -88,12 +89,10 @@ char	**ft_split(char const *s, char c)
 	return (res);
 }
 
-
 // int main()
 // {
 // 	char **p;
-// 	int i = 0;
-	
+// 	int i = 0;	
 // 	p = ft_split("hjkfdsfds", ' ');
 // 	while (p[i])
 // 	{
