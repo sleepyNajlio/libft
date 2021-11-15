@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 20:31:55 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/15 02:24:38 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/15 07:19:05 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-
 	if (!dst && !src)
 		return (NULL);
 	while (i < n)
@@ -27,9 +26,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
-
-
 // void	*ft_memcpy(void *str1, const void *str2, size_t n)
 // {
 // 	unsigned int	i;

@@ -6,13 +6,13 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:10:45 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/13 23:46:31 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/15 07:18:52 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	charnum(long int n)
+static int	charnum(long int n)
 {
 	int	i;
 

@@ -6,13 +6,13 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:59:01 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/15 07:14:22 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/15 07:19:36 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	word_count(char *str, char c)
+static int	word_count(char *str, char c)
 {
 	int	n;
 	int	i;
@@ -49,7 +49,7 @@ static char	*word_maker(char *s, char c, int j)
 	return (res);
 }
 
-void	ft_free(char **res, int j)
+static void	ft_free(char **res, int j)
 {
 	while (j >= 0)
 	{

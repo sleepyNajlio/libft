@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:28:32 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/15 06:32:11 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/15 07:20:51 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	str[j] = '\0';
 	return (str);
 }
-
 
 // int main()
 // {
