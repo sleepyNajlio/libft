@@ -6,57 +6,79 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 15:59:01 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/15 07:19:36 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/17 11:01:14 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_count(char *str, char c)
+int	word_count(char *str, char c)
 {
-	int	n;
 	int	i;
+	int	j;
+	int	n;
 
 	i = 0;
 	n = 0;
 	while (str[i])
 	{
-		if ((i == 0 || str[i - 1] == c) && str[i] != c)
+		j = 0;
+		while (str[i] != c && str[i])
+		{
+			j = 1;
+			i++;
+		}
+		if (j == 1)
 			n++;
-		i++;
+		if (str[i])
+			i++;
 	}
 	return (n);
 }
 
-static char	*word_maker(char *s, char c, int j)
+char	*freealloc(char **res, int w, int j)
 {
-	int		len;
-	char	*res;
-	int		i;
-
-	len = 0;
-	i = 0;
-	while (s[j + len] && s[j + len] != c)
-		len++;
-	res = malloc(sizeof(char) * len + 1);
-	if (!res)
-		return (0);
-	while (s[j] && s[j] != c)
+	res[w] = malloc(sizeof(char) * j + 1);
+	if (!res[w])
 	{
-		res[i++] = s[j++];
+		while (w > 0)
+		{
+			free(res[w - 1]);
+			w--;
+		}
+		free(res);
+		res = NULL;
+		return (0);
 	}
-	res[i] = '\0';
-	return (res);
+	return (res[w]);
 }
 
-static void	ft_free(char **res, int j)
+void	splitter(char **res, const char *s, char c, int n)
 {
-	while (j >= 0)
+	int	i;
+	int	j;
+	int	w;
+
+	i = 0;
+	w = 0;
+	while (n > 0)
 	{
-		free(res[j]);
-		j--;
+		j = 0;
+		while (s[i] == c)
+			i++;
+		while (s[i + j] != c && s[i + j])
+			j++;
+		if (!freealloc(res, w, j))
+			return ;
+		if (ft_memmove(res[w], &((void *)s)[i], j))
+		{
+			res[w][j] = '\0';
+			w++;
+			n--;
+			i = i + j;
+		}
 	}
-	free(res);
+	res[w] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
@@ -64,45 +86,16 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	char	**res;
 	int		j;
+	int		n;
 
 	i = 0;
 	j = 0;
 	if (!s)
 		return (0);
-	res = malloc(sizeof(char *) * word_count((char *)s, c) + 1);
+	n = word_count((char *)s, c);
+	res = malloc(sizeof(char *) * (n + 1));
 	if (!res)
 		return (NULL);
-	while (i < word_count((char *)s, c))
-	{
-		if ((j == 0 || s[j - 1] == c) && s[j] != c)
-		{
-			res[i] = word_maker((char *)s, c, j);
-			if (!(res))
-			{
-				ft_free(&res[i - 1], i);
-			}
-			i++;
-		}
-		j++;
-	}
-	res[i] = 0;
+	splitter(res, s, c, n);
 	return (res);
 }
-
-// int main()
-// {
-// 	char **p;
-// 	int i = 0;	
-// 	p = ft_split("hjkfdsfds", ' ');
-// 	while (p[i])
-// 	{
-// 		printf("%s\n", p[i]);
-// 		i++;
-// 	}
-	
-// 	// char s[] = {65, 66, 67, 68, 69, 0, 45};
-// 	// char s0[] = { 0,  0,  0,  0,  0,  0, 0};
-// 	// char s1[] = { 0,  0,  0,  0,  0,  0, 0};
-// 	// printf("%d %d\n", s0 == memmove(s0, s, 7) , !memcmp(s, s0, 7));
-// 	// printf("%d %d", s1 == ft_memmove(s1, s, 7) , !memcmp(s, s0, 7));
-// }

@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 21:06:36 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/12 00:56:07 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/17 03:21:53 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,3 @@ void	*ft_memmove(void *dst, void *src, size_t len)
 	else
 		return (ft_memcpy(dst, src, len));
 }
-
-// int main()
-// {
-// 	char s[] = {65, 66, 67, 68, 69, 0, 45};
-// 	char s0[] = { 0,  0,  0,  0,  0,  0, 0};
-// 	char s1[] = { 0,  0,  0,  0,  0,  0, 0};
-// 	printf("%d %d\n", s0 == memmove(s0, s, 7) , !memcmp(s, s0, 7));
-// 	printf("%d %d", s1 == ft_memmove(s1, s, 7) , !memcmp(s, s0, 7));
-// }

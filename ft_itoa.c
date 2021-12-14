@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:10:45 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/15 07:18:52 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/17 03:21:07 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,3 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	return (str);
 }
-// #include <limits.h>
-
-// int main()
-// {
-// 	printf("%s", ft_itoa(INT_MIN));
-// }

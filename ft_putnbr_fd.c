@@ -6,12 +6,11 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 23:40:16 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/11 02:27:07 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/16 13:38:14 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {

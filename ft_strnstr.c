@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 20:29:29 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/12 02:54:43 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/17 03:20:42 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,3 @@ char	*ft_strnstr(const char *str, const char *tofind, size_t len)
 	}
 	return (0);
 }
-
-
-// int main()
-// {
-// 	char haystack[30] = "aaabcabcd";
-// 	char needle[10] = "aabc";
-// 	printf("%d", ft_strnstr(haystack, needle, -1) == haystack + 1);
-// }

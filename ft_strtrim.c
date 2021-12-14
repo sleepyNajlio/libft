@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 20:02:16 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/15 07:20:43 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/17 07:39:51 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,10 @@ char	*ft_strtrim(const char *s, const char *set)
 		return (0);
 	else if (!set)
 		return ((char *)s);
-	while (*s && strchr(set, *s))
+	while (*s && ft_strchr(set, *s))
 		s++;
 	last = ft_strlen(s);
-	while (last > 0 && strchr(set, s[last - 1]))
+	while (last > 0 && ft_strchr(set, s[last - 1]))
 		last--;
 	return (ft_substr(s, 0, last));
 }
-
-// int main()
-// {
-// 	char * s = ft_strtrim("   xxx   xxx", " x");
-// 	printf("%s", s /*!strcmp(s, "tripouille")*/);
-// }

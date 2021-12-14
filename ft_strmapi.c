@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 18:15:28 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/14 00:00:46 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/17 03:20:31 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	res[i] = '\0';
 	return (res);
 }
-
-// char	addone(unsigned int i, char c)
-// {
-// 	return (i + c);
-// }
-
-// int main()
-// {
-// 	printf("%s", ft_strmapi("1234", addone));
-// }

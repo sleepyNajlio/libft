@@ -6,7 +6,7 @@
 /*   By: nloutfi <nloutfi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 18:47:48 by nloutfi           #+#    #+#             */
-/*   Updated: 2021/11/15 07:12:22 by nloutfi          ###   ########.fr       */
+/*   Updated: 2021/11/17 03:17:45 by nloutfi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,3 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	ft_strlcat(res, s2, len);
 	return (res);
 }
-
-// int main()
-// {
-// 	printf("%s", ft_strjoin("", "42"));
-// }
